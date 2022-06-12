@@ -13,7 +13,7 @@ public:
         //         swap(nums[left],nums[zero]);
         // }
         while(left<nums.size()){
-            zero=0;
+            // zero=0;
             while(zero < nums.size() && nums[zero]!=0)
                 zero++;
             if(zero>=nums.size()-1)
