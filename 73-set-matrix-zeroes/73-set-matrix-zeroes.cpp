@@ -1,32 +1,35 @@
 class Solution {
 public:
+    void rowzero(vector<vector<int>>& matrix,int row,int n){
+        for(int i=0;i<=n;i++){
+            matrix[row][i]=0;
+        }
+    }
+    void columnzero(vector<vector<int>>& matrix,int column,int m){
+        for(int i=0;i<=m;i++){
+            matrix[i][column]=0;
+        }
+    }
     void setZeroes(vector<vector<int>>& matrix) {
-        vector<int> row,column;
-        for(int i=0;i<matrix.size();i++){
-            for(int j=0;j<matrix[0].size();j++){
-                if(matrix[i][j]==0){
-                    row.push_back(i);
-                    column.push_back(j);
+        unordered_set<int> rows,columns;
+        int n = matrix[0].size()-1, m=matrix.size()-1;
+        for(int i=0;i<=m;i++){
+            for(int j=0;j<=n;j++){
+                if(matrix[i][j]==0)
+                {
+                    rows.insert(i);
+                    columns.insert(j);
                 }
             }
         }
-        if(column.size()==0)
-            return;
-        
-        // for(int i=0;i<row.size();i++)
-        //     for(int j=0;j<column.size();j++)
-        //         cout<<row[i]<<" "<<column[j]<<endl;
-        
-        for(int i=0;i<matrix.size();i++){
-            for(int j=0;j<column.size();j++){
-                matrix[i][column[j]]=0;
-            }
+        for(auto i:rows){
+            // cout<<i<<" ";
+            rowzero(matrix,i,n);
         }
-        for(int i=0;i<row.size();i++){
-            for(int j=0;j<matrix[0].size();j++){
-                // cout<<row[i]<<" "<<j;
-                matrix[row[i]][j]=0;
-            }
+        for(auto i: columns){
+            // cout<<i<<" ";
+            columnzero(matrix,i,m);
         }
+        
     }
 };
