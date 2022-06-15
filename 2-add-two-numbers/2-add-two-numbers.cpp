@@ -36,12 +36,10 @@ public:
         }
         while(a!=nullptr){
             ListNode* node = new ListNode;
-            if(head==NULL){
-                head = node;
-                temp = node;}
-            else {
-                temp->next = node;
-                temp = temp->next; }
+            
+            temp->next = node;
+            temp = temp->next; 
+            
             int num = a->val + carry;
             if(num<10){
                 carry = 0;
@@ -57,12 +55,10 @@ public:
         }
         while(b!=nullptr){
             ListNode* node = new ListNode;
-            if(head==NULL){
-                head = node;
-                temp = node;}
-            else {
-                temp->next = node;
-                temp = temp->next; }
+            
+            temp->next = node;
+            temp = temp->next; 
+            
             int num = b->val + carry;
             if(num<10){
                 carry = 0;
