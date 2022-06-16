@@ -24,8 +24,8 @@ public:
             return;
         }
         
-        func(root->left, 1);
-        func(root->right, 0);
+        if(root->left)  func(root->left, 1);
+        if(root->right) func(root->right, 0);
     }
     int sumOfLeftLeaves(TreeNode* root) {
         func(root, 0);
