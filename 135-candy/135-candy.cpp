@@ -6,14 +6,14 @@ public:
         vector<int> ans(ratings.size(),0);
         
         //setting initial 1s
-        for(int i=1;i<ratings.size()-1;i++){
-            if(ratings[i]>ratings[i-1] || ratings[i]>ratings[i+1])
-                ans[i]=1;
-        }
-        if(ratings[0]>ratings[1])
-            ans[0]=1;
-        if(ratings[ratings.size()-1]>ratings[ratings.size()-2])
-            ans[ratings.size()-1]=1;
+        // for(int i=1;i<ratings.size()-1;i++){
+        //     if(ratings[i]>ratings[i-1] || ratings[i]>ratings[i+1])
+        //         ans[i]=1;
+        // }
+        // if(ratings[0]>ratings[1])
+        //     ans[0]=1;
+        // if(ratings[ratings.size()-1]>ratings[ratings.size()-2])
+        //     ans[ratings.size()-1]=1;
         
         //second iteration
         if(ratings[0]>ratings[1])
